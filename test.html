@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TEST DE INTELIGENCIA EMOCIONAL</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            transition: background-color 0.5s;
+            /* Agregamos una transición para el color de fondo */
+        }
+
+        header,
+        footer {
+            background-color: #333;
+            padding: 10px;
+            color: #fff;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        header img {
+            width: 50px;
+            /* Ajusta el tamaño según sea necesario */
+            margin-right: 10px;
+            /* Espaciado entre la imagen y el texto */
+        }
+
+        nav {
+            background-color: #f2f2f2;
+            padding: 15px;
+            height: auto;
+        }
+
+        nav a {
+            display: block;
+            padding: 15px;
+            margin-bottom: 10px;
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        nav a:hover {
+            background-color: #ddd;
+        }
+
+        section {
+            padding: 20px;
+            transition: opacity 0.5s;
+            /* Agregamos una transición para la opacidad */
+        }
+
+        @media (min-width: 768px) {
+            nav {
+                float: left;
+                width: 20%;
+                height: 100vh;
+            }
+
+            section {
+                margin-left: 25%;
+            }
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th,
+        td {
+            border: 1px solid #ddd;
+            padding: 15px;
+            text-align: center;
+            /* Alineación al centro para el texto de las preguntas */
+        }
+
+        th,
+        th:nth-child(1),
+        th:nth-child(3),
+        th:nth-child(4),
+        th:nth-child(5) {
+            text-align: center;
+            /* Centro los encabezados de las columnas y los botones */
+        }
+
+        button {
+            display: block;
+            margin: 20px auto;
+            padding: 15px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        #resultado {
+            margin-top: 20px;
+        }
+
+        /* Estilos para hacer el texto más legible en dispositivos móviles */
+        @media only screen and (max-width: 600px) {
+
+            th,
+            td {
+                font-size: 14px;
+            }
+
+            button {
+                font-size: 14px;
+            }
+        }
+
+        footer {
+            background-color: #333;
+            padding: 10px;
+            color: #fff;
+            text-align: center;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            display: none;
+            justify-content: center;
+        }
+
+        footer img {
+            width: 30px;
+            margin: 0 10px;
+        }
+
+        footer p {
+            margin: 10px 0;
+            font-size: 14px;
+        }
+
+        @media (max-width: 768px) {
+            footer {
+                display: block;
+            }
+
+            footer a {
+                display: block;
+                margin: 5px 0;
+            }
+        }
+
+        h2 {
+            font-size: 36px;
+            line-height: 1.2;
+            /* Ajusta el tamaño y el espacio entre líneas según sea necesario */
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        p,
+        li {
+            font-size: 18px;
+            line-height: 1.6;
+            /* Ajusta el tamaño y el espacio entre líneas según sea necesario */
+            color: #666;
+            text-align: justify;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <img src="logo.png" alt="Logotipo">
+        <h1>MotivAcademy</h1>
+    </header>
+
+    <nav>
+        <a href="index.html">INICIO</a>
+        <a href="test.html">TEST</a>
+        <a href="consulta.html">CONSULTA</a>
+    </nav>
+
+    <section>
+        <h2>TEST DE INTELIGENCIA EMOCIONAL</h2>
+        <p>Bienvenido al test emocional creado por la <a href="https://misionessim.org/">Sociedad Internacional
+                Misionera</a> (SIM), para el curso <a href="https://movilicemos.org/curso-vamos/intro">"VAMOS"</a> del
+            <a href="https://misionessim.org/sites/default/files/Test_de_Inteligencia_Emocional.pdf">Manual Interactivo
+                para misioneros</a>, el cual tiene por objetivo evaluar la capacidad de una persona para
+            comprender eficazmente sus propias emociones. Descubre tu estilo de interacción por medio de etas preguntas,
+            las cuales se centran en tus comportamientos habituales en relaciones interpersonales.
+        </p>
+        <p>Responde el test, seleccionando en la casilla que mejor represente tu respuesta para cada pregunta.</p>
+        <p>En las casillas se asignan los puntajes de la siguiente manera:
+        <ul>
+            <li>Nunca: 0 puntos.</li>
+            <li>Algunas veces: 1 punto.</li>
+            <li>Siempre: 2 puntos.</li>
+        </ul>
+        <p><b>NOTA: </b>No hay respuestas correctas o incorrectas; simplemente refleja tu estilo de pensar, actuar y
+            sentir. Contesta el test en un entorno tranquilo sin distracciones para facilitar la concentración, además
+            contempla cómo te sientes y actúas en situaciones recientes. Esto dará una imagen más actual de tu
+            inteligencia emocional.</p>
+        <p>Pero lo mas importante, no te apresures. Lee cuidadosamente cada pregunta y elige la respuesta que mejor se
+            ajuste a tu experiencia.</p>
+        <p>¡Explora y comprendete a ti mismo!</p>
+        <form id="testForm">
+            <table>
+                <tr>
+                    <th>N°</th>
+                    <th>Pregunta</th>
+                    <th>NUNCA</th>
+                    <th>ALGUNAS VECES</th>
+                    <th>SIEMPRE</th>
+                </tr>
+                <tr>
+                    <td>1.</td>
+                    <td>Me conozco a mí mismo, sé lo que pienso, lo que siento y lo que hago.</td>
+                    <td><input type="checkbox" name="pregunta1" value="0"></td>
+                    <td><input type="checkbox" name="pregunta1" value="1"></td>
+                    <td><input type="checkbox" name="pregunta1" value="2"></td>
+                </tr>
+                <tr>
+                    <td>2.</td>
+                    <td>Soy capaz de automotivarme para aprender, estudiar, aprobar, conseguir algo.</td>
+                    <td><input type="checkbox" name="pregunta1" value="0"></td>
+                    <td><input type="checkbox" name="pregunta1" value="1"></td>
+                    <td><input type="checkbox" name="pregunta1" value="2"></td>
+                <tr>
+                    <td>3.</td>
+                    <td>Cuando las cosas me van mal mi estado de ánimo aguanta bien hasta que las cosas vayan mejor.
+                    </td>
+                    <td><input type="checkbox" name="pregunta1" value="0"></td>
+                    <td><input type="checkbox" name="pregunta1" value="1"></td>
+                    <td><input type="checkbox" name="pregunta1" value="2"></td>
+                </tr>
+                <tr>
+                    <td>4.</td>
+                    <td>Llego a acuerdos razonables con otras personas cuando tenemos posturas enfrentadas.</td>
+                    <td><input type="checkbox" name="pregunta1" value="0"></td>
+                    <td><input type="checkbox" name="pregunta1" value="1"></td>
+                    <td><input type="checkbox" name="pregunta1" value="2"></td>
+                </tr>
+                <tr>
+                    <td>5.</td>
+                    <td>Sé qué cosas me ponen alegre y qué cosas me ponen triste.</td>
+                    <td><input type="checkbox" name="pregunta1" value="0"></td>
+                    <td><input type="checkbox" name="pregunta1" value="1"></td>
+                    <td><input type="checkbox" name="pregunta1" value="2"></td>
+
+                <tr>
+                    <td>6.</td>
+                    <td>Sé lo que es más importante en cada momento.</td>
+                    <td><input type="checkbox" name="pregunta1" value="0"></td>
+                    <td><input type="checkbox" name="pregunta1" value="1"></td>
+                    <td><input type="checkbox" name="pregunta1" value="2"></td>
+                </tr>
+                <tr>
+                    <td>7.</td>
+                    <td>Cuando hago las cosas bien me felicito a mí mismo.</td>
+                    <td><input type="checkbox" name="pregunta1" value="0"></td>
+                    <td><input type="checkbox" name="pregunta1" value="1"></td>
+                    <td><input type="checkbox" name="pregunta1" value="2"></td>
+                </tr>
+                <tr>
+                    <td>8.</td>
+                    <td>Cuando los demás me provocan intencionadamente soy capaz de no responder.</td>
+                    <td><input type="checkbox" name="pregunta1" value="0"></td>
+                    <td><input type="checkbox" name="pregunta1" value="1"></td>
+                    <td><input type="checkbox" name="pregunta1" value="2"></td>
+                </tr>
+                <tr>
+                    <td>9.</td>
+                    <td>Mi fijo en el lado positivo de las cosas, soy optimista.</td>
+                    <td><input type="checkbox" name="pregunta1" value="0"></td>
+                    <td><input type="checkbox" name="pregunta1" value="1"></td>
+                    <td><input type="checkbox" name="pregunta1" value="2"></td>
+                </tr>
+                <tr>
+                    <td>10.</td>
+                    <td>Controlo mis pensamientos, pienso lo que de verdad me interesa.</td>
+                    <td><input type="checkbox" name="pregunta1" value="0"></td>
+                    <td><input type="checkbox" name="pregunta1" value="1"></td>
+                    <td><input type="checkbox" name="pregunta1" value="2"></td>
+                </tr>
+                <tr>
+                    <td>11.</td>
+                    <td>Hablo conmigo mismo, en voz baja claro.</td>
+                    <td><input type="checkbox" name="pregunta1" value="0"></td>
+                    <td><input type="checkbox" name="pregunta1" value="1"></td>
+                    <td><input type="checkbox" name="pregunta1" value="2"></td>
+                </tr>
+                <tr>
+                    <td>12.</td>
+                    <td>Cuando me piden que diga o haga algo que me parece inaceptable me niego a hacerlo.</td>
+                    <td><input type="checkbox" name="pregunta1" value="0"></td>
+                    <td><input type="checkbox" name="pregunta1" value="1"></td>
+                    <td><input type="checkbox" name="pregunta1" value="2"></td>
+                </tr>
+                <tr>
+                    <td>13.</td>
+                    <td>Cuando alguien me critica injustamente me defiendo adecuadamente con el diálogo.</td>
+                    <td><input type="checkbox" name="pregunta1" value="0"></td>
+                    <td><input type="checkbox" name="pregunta1" value="1"></td>
+                    <td><input type="checkbox" name="pregunta1" value="2"></td>
+                </tr>
+                <tr>
+                    <td>14.</td>
+                    <td>Cuando me critican por algo que es justo lo acepto porque tienen razón.</td>
+                    <td><input type="checkbox" name="pregunta1" value="0"></td>
+                    <td><input type="checkbox" name="pregunta1" value="1"></td>
+                    <td><input type="checkbox" name="pregunta1" value="2"></td>
+                </tr>
+                <tr>
+                    <td>15.</td>
+                    <td>Soy capaz de quitarme de la mente las preocupaciones que me obsesiona.</td>
+                    <td><input type="checkbox" name="pregunta1" value="0"></td>
+                    <td><input type="checkbox" name="pregunta1" value="1"></td>
+                    <td><input type="checkbox" name="pregunta1" value="2"></td>
+                </tr>
+                <tr>
+                    <td>16.</td>
+                    <td>Me doy cuenta de lo que dicen, piensan y sienten las personas más cercanas a mí (amigos,
+                        compañeros,
+                        familiares…).</td>
+                    <td><input type="checkbox" name="pregunta1" value="0"></td>
+                    <td><input type="checkbox" name="pregunta1" value="1"></td>
+                    <td><input type="checkbox" name="pregunta1" value="2"></td>
+                </tr>
+                <tr>
+                    <td>17.</td>
+                    <td>Valoro las cosas buenas que hago.</td>
+                    <td><input type="checkbox" name="pregunta1" value="0"></td>
+                    <td><input type="checkbox" name="pregunta1" value="1"></td>
+                    <td><input type="checkbox" name="pregunta1" value="2"></td>
+                </tr>
+                <tr>
+                    <td>18.</td>
+                    <td>Soy capaz de divertirme y pasármelo bien allí donde esté.</td>
+                    <td><input type="checkbox" name="pregunta1" value="0"></td>
+                    <td><input type="checkbox" name="pregunta1" value="1"></td>
+                    <td><input type="checkbox" name="pregunta1" value="2"></td>
+                </tr>
+                <tr>
+                    <td>19.</td>
+                    <td>Hay cosas que no me gusta hacer pero sé que hay que hacerlas y las hago.</td>
+                    <td><input type="checkbox" name="pregunta1" value="0"></td>
+                    <td><input type="checkbox" name="pregunta1" value="1"></td>
+                    <td><input type="checkbox" name="pregunta1" value="2"></td>
+                </tr>
+                <tr>
+                    <td>20.</td>
+                    <td>Soy capaz de sonreír.</td>
+                    <td><input type="checkbox" name="pregunta1" value="0"></td>
+                    <td><input type="checkbox" name="pregunta1" value="1"></td>
+                    <td><input type="checkbox" name="pregunta1" value="2"></td>
+                </tr>
+                <tr>
+                    <td>21.</td>
+                    <td>Tengo confianza en mí mismo, en lo que soy capaz de hacer, pensar y sentir.</td>
+                    <td><input type="checkbox" name="pregunta1" value="0"></td>
+                    <td><input type="checkbox" name="pregunta1" value="1"></td>
+                    <td><input type="checkbox" name="pregunta1" value="2"></td>
+                </tr>
+                <tr>
+                    <td>22.</td>
+                    <td>Soy una persona activa, me gusta hacer cosas.</td>
+                    <td><input type="checkbox" name="pregunta1" value="0"></td>
+                    <td><input type="checkbox" name="pregunta1" value="1"></td>
+                    <td><input type="checkbox" name="pregunta1" value="2"></td>
+                </tr>
+                <tr>
+                    <td>23.</td>
+                    <td>Comprendo los sentimientos de los demás.</td>
+                    <td><input type="checkbox" name="pregunta1" value="0"></td>
+                    <td><input type="checkbox" name="pregunta1" value="1"></td>
+                    <td><input type="checkbox" name="pregunta1" value="2"></td>
+                </tr>
+                <tr>
+                    <td>24.</td>
+                    <td>Mantengo conversaciones con la gente.</td>
+                    <td><input type="checkbox" name="pregunta1" value="0"></td>
+                    <td><input type="checkbox" name="pregunta1" value="1"></td>
+                    <td><input type="checkbox" name="pregunta1" value="2"></td>
+                </tr>
+                <tr>
+                    <td>25.</td>
+                    <td>Tengo buen sentido del humor.</td>
+                    <td><input type="checkbox" name="pregunta1" value="0"></td>
+                    <td><input type="checkbox" name="pregunta1" value="1"></td>
+                    <td><input type="checkbox" name="pregunta1" value="2"></td>
+                </tr>
+                <tr>
+                    <td>26.</td>
+                    <td>Aprendo de los errores que cometo.</td>
+                    <td><input type="checkbox" name="pregunta1" value="0"></td>
+                    <td><input type="checkbox" name="pregunta1" value="1"></td>
+                    <td><input type="checkbox" name="pregunta1" value="2"></td>
+                </tr>
+                <tr>
+                    <td>27.</td>
+                    <td>En momentos de tensión y ansiedad soy capaz de relajarme y tranquilizarme para no perder el
+                        control
+                        y actuar apresuradamente.</td>
+                    <td><input type="checkbox" name="pregunta1" value="0"></td>
+                    <td><input type="checkbox" name="pregunta1" value="1"></td>
+                    <td><input type="checkbox" name="pregunta1" value="2"></td>
+                </tr>
+                <tr>
+                    <td>28.</td>
+                    <td>Soy una persona realista, con los ofrecimientos que hago, sabiendo qué cosa puedo cumplir y qué
+                        no
+                        me será posible hacer.</td>
+                    <td><input type="checkbox" name="pregunta1" value="0"></td>
+                    <td><input type="checkbox" name="pregunta1" value="1"></td>
+                    <td><input type="checkbox" name="pregunta1" value="2"></td>
+                </tr>
+                <tr>
+                    <td>29.</td>
+                    <td>Cuando alguien se muestra muy nervioso/a o exaltado/a le calmo y la tranquilizo.</td>
+                    <td><input type="checkbox" name="pregunta1" value="0"></td>
+                    <td><input type="checkbox" name="pregunta1" value="1"></td>
+                    <td><input type="checkbox" name="pregunta1" value="2"></td>
+                </tr>
+                <tr>
+                    <td>30.</td>
+                    <td>Tengo las ideas muy claras sobre lo que quiero.</td>
+                    <td><input type="checkbox" name="pregunta1" value="0"></td>
+                    <td><input type="checkbox" name="pregunta1" value="1"></td>
+                    <td><input type="checkbox" name="pregunta1" value="2"></td>
+                </tr>
+                <tr>
+                    <td>31.</td>
+                    <td>Controlo bien mis miedos y temores.</td>
+                    <td><input type="checkbox" name="pregunta1" value="0"></td>
+                    <td><input type="checkbox" name="pregunta1" value="1"></td>
+                    <td><input type="checkbox" name="pregunta1" value="2"></td>
+                </tr>
+                <tr>
+                    <td>32.</td>
+                    <td>Si he de estar solo no me agobio por eso.</td>
+                    <td><input type="checkbox" name="pregunta1" value="0"></td>
+                    <td><input type="checkbox" name="pregunta1" value="1"></td>
+                    <td><input type="checkbox" name="pregunta1" value="2"></td>
+                </tr>
+                <tr>
+                    <td>33.</td>
+                    <td>Formo parte algún grupo o equipo de deporte o de ocio para compartir intereses o aficiones.</td>
+                    <td><input type="checkbox" name="pregunta1" value="0"></td>
+                    <td><input type="checkbox" name="pregunta1" value="1"></td>
+                    <td><input type="checkbox" name="pregunta1" value="2"></td>
+                </tr>
+                <tr>
+                    <td>34.</td>
+                    <td>Sé cuáles son mis defectos y cómo cambiarlos.</td>
+                    <td><input type="checkbox" name="pregunta1" value="0"></td>
+                    <td><input type="checkbox" name="pregunta1" value="1"></td>
+                    <td><input type="checkbox" name="pregunta1" value="2"></td>
+                </tr>
+                <tr>
+                    <td>35.</td>
+                    <td>Soy creativo, tengo ideas originales y las desarrollo.</td>
+                    <td><input type="checkbox" name="pregunta1" value="0"></td>
+                    <td><input type="checkbox" name="pregunta1" value="1"></td>
+                    <td><input type="checkbox" name="pregunta1" value="2"></td>
+                </tr>
+                <tr>
+                    <td>36.</td>
+                    <td>Sé qué pensamientos son capaces de hacerme sentir feliz, triste, enfadado/a, altruista,
+                        angustiado/a.</td>
+                    <td><input type="checkbox" name="pregunta1" value="0"></td>
+                    <td><input type="checkbox" name="pregunta1" value="1"></td>
+                    <td><input type="checkbox" name="pregunta1" value="2"></td>
+                </tr>
+                <tr>
+                    <td>37.</td>
+                    <td>Soy capaz de aguantar bien la frustración cuando no consigo lo que me propongo.</td>
+                    <td><input type="checkbox" name="pregunta1" value="0"></td>
+                    <td><input type="checkbox" name="pregunta1" value="1"></td>
+                    <td><input type="checkbox" name="pregunta1" value="2"></td>
+                </tr>
+                <tr>
+                    <td>38.</td>
+                    <td>Me comunico bien con la gente con la que me relaciono.</td>
+                    <td><input type="checkbox" name="pregunta1" value="0"></td>
+                    <td><input type="checkbox" name="pregunta1" value="1"></td>
+                    <td><input type="checkbox" name="pregunta1" value="2"></td>
+                </tr>
+                <tr>
+                    <td>39.</td>
+                    <td>Soy capaz de comprender el punto vista de los demás.</td>
+                    <td><input type="checkbox" name="pregunta1" value="0"></td>
+                    <td><input type="checkbox" name="pregunta1" value="1"></td>
+                    <td><input type="checkbox" name="pregunta1" value="2"></td>
+                </tr>
+                <tr>
+                    <td>40.</td>
+                    <td>Identifico las emociones que expresa la gente de mi alrededor.</td>
+                    <td><input type="checkbox" name="pregunta1" value="0"></td>
+                    <td><input type="checkbox" name="pregunta1" value="1"></td>
+                    <td><input type="checkbox" name="pregunta1" value="2"></td>
+                </tr>
+                <tr>
+                    <td>41.</td>
+                    <td>Soy capaz de verme a mí mismo/a desde la perspectiva de los otros.</td>
+                    <td><input type="checkbox" name="pregunta1" value="0"></td>
+                    <td><input type="checkbox" name="pregunta1" value="1"></td>
+                    <td><input type="checkbox" name="pregunta1" value="2"></td>
+                </tr>
+                <tr>
+                    <td>42.</td>
+                    <td>Me responsabilizo de los actos que hago.</td>
+                    <td><input type="checkbox" name="pregunta1" value="0"></td>
+                    <td><input type="checkbox" name="pregunta1" value="1"></td>
+                    <td><input type="checkbox" name="pregunta1" value="2"></td>
+                </tr>
+                <tr>
+                    <td>43.</td>
+                    <td>Me adapto a las nuevas situaciones, aunque me cueste algún cambio en mi manera de sentir las
+                        cosas.
+                    </td>
+                    <td><input type="checkbox" name="pregunta1" value="0"></td>
+                    <td><input type="checkbox" name="pregunta1" value="1"></td>
+                    <td><input type="checkbox" name="pregunta1" value="2"></td>
+                </tr>
+                <tr>
+                    <td>44.</td>
+                    <td>Creo que soy una persona equilibrada emocionalmente.</td>
+                    <td><input type="checkbox" name="pregunta1" value="0"></td>
+                    <td><input type="checkbox" name="pregunta1" value="1"></td>
+                    <td><input type="checkbox" name="pregunta1" value="2"></td>
+                </tr>
+                <tr>
+                    <td>45.</td>
+                    <td>Tomo decisiones sin dudar ni titubear demasiado.</td>
+                    <td><input type="checkbox" name="pregunta1" value="0"></td>
+                    <td><input type="checkbox" name="pregunta1" value="1"></td>
+                    <td><input type="checkbox" name="pregunta1" value="2"></td>
+                </tr>
+
+                <!-- Repite este bloque para las demás preguntas -->
+            </table>
+            <button type="button" onclick="calcularResultado()">Calcular Puntuación</button>
+        </form>
+
+        <div id="resultado">
+            <!-- Aquí se mostrará el resultado -->
+        </div>
+
+        <script>
+            function calcularResultado() {
+                // Sumar los puntos de acuerdo con las respuestas seleccionadas
+                let puntos = 0;
+                const respuestas = document.querySelectorAll('input[type=checkbox]:checked');
+                respuestas.forEach(respuesta => {
+                    puntos += parseInt(respuesta.value, 10);
+                });
+
+                // Mostrar el resultado
+                mostrarResultado(puntos);
+            }
+
+            function mostrarResultado(puntos) {
+                let resultado = '';
+
+                if (puntos >= 0 && puntos <= 20) {
+                    resultado = 'MUY BAJO';
+                } else if (puntos <= 35) {
+                    resultado = 'BAJO';
+                } else if (puntos <= 45) {
+                    resultado = 'MEDIO-BAJO';
+                } else if (puntos <= 79) {
+                    resultado = 'MEDIO-ALTO';
+                } else {
+                    resultado = 'MUY ALTO';
+                }
+
+                // Mostrar el resultado en la página
+                const resultadoDiv = document.getElementById('resultado');
+                resultadoDiv.innerHTML = `<p>Tu puntuación es ${puntos}. Nivel de inteligencia emocional: ${resultado}</p>`;
+
+                // Agregar información adicional según el resultado
+                switch (resultado) {
+                    case 'MUY BAJO':
+                        resultadoDiv.innerHTML += `<p>Con esta puntuación debes saber que todavía no conoces suficientemente qué emociones son las que vives, no valoras adecuadamente tus capacidades. Este programa de trabajo te podrá ser de gran ayuda para aumentar tus habilidades de inteligencia emocional.</p>`;
+                        break;
+                    case 'BAJO':
+                        resultadoDiv.innerHTML += `<p>Con esta puntuación tus habilidades emocionales son todavía escasas. Necesitas conocerte un poco mejor y valorar más lo que tú puedes ser capaz de hacer.</p>`;
+                        break;
+                    case 'MEDIO-BAJO':
+                        resultadoDiv.innerHTML += `<p>Casi lo conseguiste. Con esta puntuación te encuentras rayando lo deseable para tus habilidades emocionales. No te conformes con estos puntos conseguidos. El programa de trabajo que ahora inicias pretende que mejores un poco más en tu INTELIGENCIA EMOCIONAL.</p>`;
+                        break;
+                    case 'MEDIO-ALTO':
+                        resultadoDiv.innerHTML += `<p>No está nada mal la puntuación que has obtenido. Indica que sabes quién eres, cómo te emocionas, cómo manejas tus sentimientos y cómo descubres todo esto en los demás. Tus relaciones con la gente las llevas bajo control, empleando para ello tus habilidades para saber cómo te sientes tú, cómo debes expresarlo y también conociendo cómo se sienten los demás, y qué debes hacer para mantener relaciones satisfactorias con otras personas.</p>`;
+                        break;
+                    case 'MUY ALTO':
+                        resultadoDiv.innerHTML += `<p>Eres un superhéroe de la emoción y su control. Se diría que eres número 1 en eso de la INTELIGENCIA EMOCIONAL. Tus habilidades te permiten ser consciente de quién eres, qué objetivos pretendes, qué emociones vives, sabes valorarte como te mereces, manejas bien tus estados emocionales y, además, con más mérito todavía, eres capaz de comunicarte eficazmente con quienes te rodean, y también eres único/a para solucionar posconflictos interpersonales que cada día acontecen.</p>`;
+                        break;
+                    default:
+                        break;
+                }
+            }
+        </script>
+        <p>Si aún tienes preguntas sobre los resultados del test, puedes ver las respuestas detalladas a continuación de
+            este texto. Sin embargo, si estás interesado en mejorar tu inteligencia emocional, te animamos a explorar la
+            sección
+            "<a href="consulta.html">CONSULTA</a>". Allí encontrarás información adicional y contenido diseñado para
+            facilitar el desarrollo de tus
+            habilidades emocionales.</p>
+        <h2>RESPUESTAS DEL TEST</h2>
+        <h3>MUY BAJO:</h3>
+        <p>Debes saber que todavía no conoces suficientemente qué emociones son las
+            que vives, no valoras adecuadamente tus capacidades, que seguramente tienes. Son muchas las
+            habilidades que no pones en práctica, y son necesarias para que te sientas más a gusto contigo
+            mismo y para que las relaciones con la gente sean satisfactorias.</p>
+        <h3>BAJO:</h3>
+        <p>Tus habilidades emocionales son todavía escasas. Necesitas conocerte un
+            poco mejor y valorar más lo que tú puedes ser capaz de hacer. Saber qué emociones
+            experimentas, cómo las controlas, cómo las expresas y como las identificas en los demás es
+            fundamental para que te puedas sentir bien, y desarrollar toda tu personalidad de una manera
+            eficaz.</p>
+        <h3>MEDIO-BAJO:</h3>
+        <p>Te encuentras rayando lo deseable para tus habilidades
+            emocionales. Ya conoces muchas cosas de lo que piensas, haces y sientes y, posiblemente, de
+            cómo manejar tus emociones y comunicarte con eficacia con los demás. No obstante, no te
+            conformes con este puntaje conseguido.</p>
+        <h3>MEDIO-ALTO:</h3>
+        <p>Sabes quién eres, cómo te
+            emocionas, cómo manejas tus sentimientos y cómo descubres todo esto en los demás. Tus
+            relaciones con la gente las llevas bajo control, empleando para ello tus habilidades para saber
+            cómo te sientes tú, cómo debes expresarlo y también conociendo cómo se sienten los demás, y
+            qué debes hacer para mantener relaciones satisfactorias con otras personas.</p>
+        <h3>MUY ALTO:</h3>
+        <p>Eres un superhéroe de la emoción y su control. Se diría que eres número 1 en eso de la
+            INTELIENCIA EMOCIONAL. Tus habilidades te permiten ser consciente de quién eres, qué
+            objetivos pretendes, qué emociones vives, sabes valorarte como te mereces, manejas bien tus
+            estados emocionales y, además, con más mérito todavía, eres capaz de comunicarte eficazmente
+            con quienes te rodean, y también eres único/a para solucionar posconflictos interpersonales que
+            cada día acontecen. </p>
+        <p>Descubre más sobre el poder de tus emociones siguiendo en las redes sociales, a compañeros inspiradores en el pie de
+            página. Encuentra apoyo, motivación y consejos valiosos para conquistar tus desafíos académicos. ¡Conéctate
+            con comunidades que entienden y apoyan tu viaje!</p>
+        <br>
+        <br>
+        <br>
+        <br>
+    </section>
+    <footer id="pieDePagina">
+        <p>&copy; 2023 MotivAcademy. Desarrollado por los alumnos de la Academia de Ingeniería en Sistemas Computacionales.</p>
+        <div>
+            <a href="https://www.youtube.com/watch?v=se62UwCxUrI&ab_channel=FullPerception" target="_blank">
+                <img src="YOUTUBE.png" alt="YouTube">
+            </a>
+            <a href="https://www.tiktok.com/@pattimaciasec/video/7199767509480787206" target="_blank">
+                <img src="TIK_TOK.png" alt="TikTok">
+            </a>
+            <a href="https://www.facebook.com/InteligenciaEmocionalMexico?locale=es_LA" target="_blank">
+                <img src="FACEBOOK.png" alt="Facebook">
+            </a>
+        </div>
+    </footer>
+    <script>
+        // Obtener el pie de página
+        var pieDePagina = document.getElementById("pieDePagina");
+
+        // Mostrar el pie de página cuando la ventana esté completamente cargada
+        window.onload = function () {
+            pieDePagina.style.display = "flex";
+        };
+    </script>
+
+
+</body>
+
+</html>
